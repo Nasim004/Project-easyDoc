@@ -67,6 +67,7 @@ class Login(APIView):
 
         user = User.objects.all()
         status = 'None'
+       
 
 
         for i in user:
@@ -77,7 +78,8 @@ class Login(APIView):
                         'password':password
                     }
                     jwt_token = jwt.encode(payload,'secret',algorithm='HS256')
-                    response = Response({'status':'Success'})
+                    print(jwt_token)
+                    response = Response({'status':'Success', 'payload': payload})
                     response.set_cookie('jwt',jwt_token)
                     return response
                 else:
@@ -85,10 +87,13 @@ class Login(APIView):
                     break
             else:
                 status = 'Email is not found'
+                
         return Response({'status':status})
 
                     
                         
-
-                    
-
+class Logout(APIView):
+    def get(self,request):
+        response = Response({'status':'success'})
+        response.delete_cookie('jwt')
+        return response
