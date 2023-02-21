@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from userAccounts.serializers import User_Serializer
@@ -78,7 +77,6 @@ class Login(APIView):
                         'password':password
                     }
                     jwt_token = jwt.encode(payload,'secret',algorithm='HS256')
-                    print(jwt_token)
                     response = Response({'status':'Success', 'payload': payload})
                     response.set_cookie('jwt',jwt_token)
                     return response

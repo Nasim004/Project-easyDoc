@@ -48,7 +48,7 @@ INSTALLED_APPS = [
 
 
     'userAccounts.apps.UseraccountsConfig',
-    'hospitalAccounts.app.HospitalaccountsConfig',
+    'hospitalAccounts.apps.HospitalaccountsConfig',
 
 ]
 
