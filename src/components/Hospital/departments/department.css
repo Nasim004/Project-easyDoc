@@ -1,0 +1,15 @@
+/* .container {  display: grid;
+    grid-template-columns: 1.6fr 0.1fr 1.5fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "Table-list . Form"
+      ". . ."
+      ". . .";
+  }
+  
+  .Table-list { grid-area: Table-list; }
+  
+  .Form { grid-area: Form; }
+   */
