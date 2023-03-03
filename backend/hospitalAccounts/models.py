@@ -18,3 +18,7 @@ class Hospital(models.Model):
 
 
 
+class Departments(models.Model):
+    name = models.CharField(max_length=50)
+    count = models.IntegerField()
+    head = models.CharField(max_length=100)
